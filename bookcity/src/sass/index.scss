@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: .14rem;
+    outline: none;
+}
+
+html {
+    font-size: calc(100/325*100vw)
+}
+
+@mixin num($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+%text {
+    display: box;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin fl($j:space-between) {
+    display: flex;
+    justify-content: $j;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-justify-content: $j;
+    -webkit-align-items: center;
+}
+
+.wrap {
+    @include num(100%, 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    @include num(100%, .4rem);
+    @include fl();
+    background: #efeff0;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 .1rem;
+    z-index: 99;
+    .he-ul {
+        @include num(80%, .4rem);
+        @include fl(center);
+        li {
+            margin: 0 .1rem;
+            height: .4rem;
+            line-height: .4rem;
+            font-size: .14rem;
+        }
+    }
+    i.icon {
+        flex-basis: .3rem;
+        text-align: center;
+        font-size: .17rem;
+    }
+    i.icon:first-of-type {
+        color: #f60;
+    }
+}
+
+.color {
+    border-bottom: 2px solid #f60;
+    color: #f60;
+}
+
+// 刷新
+.slide-one {
+    @include num(100%, 10rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.slideone {
+    @include num(100%, auto);
+}
+
+.down {
+    @include num(100%, .2rem);
+    position: absolute;
+    top: -.2rem;
+    left: 0;
+    text-align: center;
+}
+
+.up {
+    @include num(100%, .35rem);
+    text-align: center;
+    position: absolute;
+    bottom: -.35rem;
+    left: 0;
+}
+
+section {
+    flex: 1;
+    margin-top: .5rem;
+    overflow-y: scroll;
+}
+
+.sec-top {
+    @include num(100%, .4rem);
+    position: relative;
+    padding: 0 .1rem;
+    input {
+        @include num(100%, .4rem);
+        text-indent: 2em;
+        border: 1px solid #efeff0;
+    }
+    i.icon {
+        position: absolute;
+        top: .1rem;
+        left: .15rem;
+    }
+}
+
+// 本周最火
+.sec-tit {
+    @include num(100%, .67rem);
+    border-bottom: .07rem solid #ccc;
+    padding: 0 .1rem;
+    .sectit-ul {
+        @include num(100%, .67rem);
+        @include fl();
+        li {
+            text-align: center;
+            i.icon {
+                color: #fff;
+                border-radius: 50%;
+                font-size: .3rem;
+            }
+            .two {
+                background: #f270a7!important;
+            }
+            .three {
+                background: #29c9c7!important;
+            }
+            p {
+                @include num(.3rem, .3rem);
+                border-radius: 50%;
+                line-height: .3rem;
+                i.icon {
+                    font-size: .2rem!important;
+                    font-weight: 800;
+                }
+                &:first-of-type {
+                    background: #fb565a;
+                }
+            }
+            p.fors {
+                background: #2ecb75;
+            }
+            p.five {
+                background: #ff942b;
+            }
+            span {
+                display: block;
+                font-size: .12rem;
+            }
+        }
+    }
+}
+
+.sec-cont {
+    @include num(100%, 100%);
+    border-bottom: .05rem solid #ccc;
+}
+
+.sec-tit1 {
+    @include num(100%, .38rem);
+    border-left: 2px solid #f60;
+    border-bottom: 1px solid #efeff0;
+    p {
+        @include num(100%, 100%);
+        margin-left: .2rem;
+        line-height: .38rem;
+    }
+}
+
+.seccont-dl {
+    @include num(100%, 100%);
+    @include fl();
+    padding: .06rem;
+    flex-wrap: wrap;
+    dl {
+        @include num(26%, auto);
+        margin: .05rem;
+        dt {
+            @include num(100%, 100%);
+            img {
+                @include num(100%, auto);
+            }
+        }
+        dd {
+            @include num(100%, .3rem);
+            p {
+                display: table-cell;
+                vertical-align: bottom;
+                font-size: .12rem;
+            }
+        }
+    }
+}
+
+.secconts {
+    @include num(100%, 100%);
+}
+
+//重磅推荐
+.seccont-tuijian {
+    @include num(100%, 100%);
+    border-bottom: .07rem solid #ccc;
+}
+
+.sec-contp {
+    @include num(100%, .2rem);
+    border-left: 2px solid #f60;
+    padding-left: .2rem;
+    line-height: .2rem;
+    margin: .1rem 0 .1rem 0;
+}
+
+.seccont-intj {
+    @include num(100%, 100%);
+    dl {
+        @include fl();
+        @include num(100%, auto);
+        padding: .1rem;
+        border-top: 1px solid #ccc;
+        dt {
+            margin-right: .1rem;
+            @include num(25%, auto);
+            img {
+                @include num(100%, auto);
+            }
+        }
+        dd {
+            flex: 1;
+            .sec-dlfirstp {
+                line-height: .3rem;
+                font-size: .16rem;
+            }
+            .sec-dlp {
+                font-size: .12rem;
+                line-height: .3rem;
+            }
+            .sec-dlcont {
+                @include num(100%, .5rem);
+                @extend %text;
+                font-size: .12rem;
+            }
+            span {
+                color: #2ecb75;
+                padding: .006rem .02rem;
+                border: 1px solid #2ecb75;
+                margin-top: .03rem;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.seccont-ul {
+    @include num(100%, auto);
+    margin-top: .1rem;
+    li {
+        line-height: .45rem;
+        border-top: 1px solid #ccc;
+        padding-left: .1rem;
+    }
+}
+
+//换一换
+.secul {
+    @include num(100%, auto);
+    text-align: center;
+    .sec-btn {
+        background: 0;
+        @include num(100%, .45rem);
+        display: inline-block;
+        border: 0;
+        border-top: 1px solid #fbc691;
+        border-bottom: 1px solid #fbc691;
+    }
+}
+
+.one {
+    position: relative;
+}
+
+//书架
+.slide2-top {
+    @include num(100%, .4rem);
+    @include fl();
+    position: relative;
+    padding: 0 .1rem;
+    .slide2-topp {
+        flex: 1;
+        margin-right: .2rem;
+        input {
+            @include num(100%, .4rem);
+            text-indent: 2em;
+            border: 1px solid #efeff0;
+        }
+        i.icon {
+            position: absolute;
+            top: .1rem;
+            left: .15rem;
+        }
+    }
+    .slide2-topp1 {
+        border: 1px solid #ccc;
+        @include fl(center);
+        @include num(.38rem, .38rem);
+        i.icon {
+            font-size: .23rem;
+            color: #bababb;
+        }
+    }
+}
+
+.box {
+    @include num(100%, auto);
+    li {
+        @include num(100%, .4rem);
+    }
+}
+
+.slide2-cont {
+    @include num(100%, auto);
+    img {
+        width: .8rem;
+        display: block;
+        margin: .2rem .1rem;
+    }
+    dl {
+        display: flex;
+        border-bottom: .1rem solid #ccc;
+        margin-bottom: .1rem;
+    }
+}

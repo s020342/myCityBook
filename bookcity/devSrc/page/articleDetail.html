@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/static/fonts/iconfont.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <p class='he-span'>
+                <span id='back'>
+                    返回
+                </span>
+
+                <span>详情</span></p>
+            <i class="icon iconfont icon-shouye"></i>
+        </header>
+        <section class="book">
+
+        </section>
+        <script id='book' type='text/x-handlebars-template'>
+            <div class="sec-detsil ">
+                <dl>
+                    <dt><img src="{{this.cover}}" alt=""></dt>
+                    <dd>
+
+                        <p class='sec-title'>{{this.title}}</p>
+                        <p class='sec-autoer'>{{this.authors}}</p>
+                        <p class='sec-word'><b class='sec-word'>{{this.score_count}}</b>个评价</p>
+                        <p class='sec-word'>价格：<span class='sec-word'>{{this.price}}</span>书币/干字</p>
+                        <p class='sec-word'>字数：<span class='sec-word'>{{this.word_count}}</span>字 <span class='dl-loading'>连载中</span></p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sec-btn">
+                <button type="button" class='read'>开始阅读</button>
+                <button type="button" class='load'>下载</button>
+            </div>
+            <div class="details">
+                <p>{{this.summary}}</p>
+            </div>
+            <div class="news">
+                <p class='in-news'>最新：<span> {{this.latest}}</span></p>
+            </div>
+            <div class="clsaaify">
+                <h5>类别标签</h5>
+                <div class="clasify-in">
+                    {{#each this.tags}}
+                    <span class='cls-color'>{{this}}</span> {{/each}}
+                </div>
+            </div>
+        </script>
+        <!-- 详情 -->
+
+
+        </section>
+    </div>
+
+    <script src="/static/js/utils/require.js "></script>
+    <script src="/js/articleDetail/index.js "></script>
+</body>
+
+</html>

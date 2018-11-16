@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/page.css">
+    <link rel="stylesheet" href="/static/fonts/iconfont.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <script id="wrap" type="text/x-handlebars-template">
+
+            <header>
+                <p class='he-span'>
+                    <a href="/page/index.html"><i class="icon iconfont icon-xiangzuo"></i></a>
+                    <span>{{this.data.ad_setting_name}}</span></p>
+                <i class="icon iconfont icon-shouye"></i>
+            </header>
+
+            <section>
+
+                <div class="sec-welcome">
+                    <p>{{this.data.items.[0].ad_name}}</p>
+                </div>
+                <div class="sec-cont">
+                    {{#each this.data.items.[0].data.data}}
+                    <dl class="goDetail" id="{{this.fiction_id}}">
+                        <dt><img src="{{this.cover}}" alt=""></dt>
+                        <dd>
+                            <p class='sec-title'>{{this.title}}</p>
+                            <p class='sec-bookcont'>{{this.summary}}</p>
+                        </dd>
+                    </dl>
+
+                    {{/each}}
+                </div>
+            </section>
+
+        </script>
+    </div>
+
+    <script src="/static/js/utils/require.js "></script>
+    <script src="/js/articleClass/index.js "></script>
+</body>
+
+</html>

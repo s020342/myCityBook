@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/fonts/iconfont.css">
+
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <i class="icon iconfont icon-qiandao2"></i>
+            <ul class='he-ul'>
+                <li class='color'>书城</li>
+                <li>书架</li>
+            </ul>
+            <i class="icon iconfont icon-nvsheng"></i>
+        </header>
+        <section>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 整平滑动第一页 -->
+                    <div class="swiper-slide one">
+                        <div class="slide-one ">
+                            <div class="slideone">
+                                <div class="down">下拉刷新</div>
+                                <!-- input框 -->
+                                <div class="sec-top">
+                                    <input type="text" placeholder="请输入书名，作者，关键字" id="indexSearch">
+                                    <i class="icon iconfont icon-yintian-baitian"></i>
+                                </div>
+                                <!-- i.icon图标 -->
+                                <div class="sec-tit classify">
+                                    <script type="text/x-handlebars-template" id="top_banner">
+
+                                        <ul class='sectit-ul'>
+                                            {{#each this}}
+                                            <li class="articleClassGo" id="{{this.id}}">
+                                                <p><img style="width:100%;" class="i.icon" src="{{this.ad_copy}}" /></p>
+                                                <span>{{this.ad_name}}</span>
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    </script>
+
+                                </div>
+                                <!-- 本周最火 -->
+                                <div class="sec-cont hot">
+                                    <script type="text/x-handlebars-template" id="hot">
+                                        <div class="sec-tit1">
+                                            <p>{{this.ad_name}}</p>
+                                        </div>
+                                        <div class="seccont-dl">
+                                            {{#each this.data.data}}
+                                            <dl>
+                                                <dt style="width: 100%;height: 1.26rem;"><img  src="{{this.cover}} " alt=" "></dt>
+                                                <dd>
+                                                    <p>{{this.title}}</p>
+                                                </dd>
+                                            </dl>
+                                            {{/each}}
+                                        </div>
+
+                                    </script>
+                                </div>
+                                <!-- 重磅推荐 -->
+
+                                <script type="text/x-handlebars-template" id="more">
+                                    {{#each this}}
+                                    <p class='sec-contp'>{{this.ad_name}}</p>
+                                    <div class="secconts ">
+                                        <div class="seccont-intj ">
+                                            <dl>
+                                                <dt><img src="{{this.data.data.[0].cover}}" alt=" "></dt>
+                                                <dd>
+                                                    <p class='sec-dlfirstp'>{{this.data.data.[0].title}}</p>
+                                                    <p class='sec-dlp'>{{this.data.data.[0].authors}}</p>
+                                                    <p class='sec-dlcont'>{{this.data.data.[0].summary}}</p>
+                                                    {{#each this.data.data.[0].tags}}
+                                                    <span>{{this}}</span> {{/each}}
+
+                                                </dd>
+                                            </dl>
+                                            <ul class='seccont-ul'>
+                                                {{#each this.data.data}} {{#testif this @index 5 1}}
+                                                <li>{{this.list}}、{{this.title}}</li>
+                                                {{/testif}} {{/each}}
+                                            </ul>
+                                            <div class="secul ">
+                                                <button class='sec-btn change{{@index}}'>换一换</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </script>
+                                <div class="seccont-tuijian more">
+
+                                </div>
+                                <!--  详情-->
+                                <div class="books">
+
+                                </div>
+                                <script id="books" type="text/x-handlebars-template">
+                                    {{#each this}}
+                                    <div class="seccont-tuijian">
+
+                                        <div class="seccont-intj ">
+                                            <dl>
+                                                <dt><img src="{{this.cover}}"></dt>
+                                                <dd>
+                                                    <p class='sec-dlfirstp'>{{this.title}}</p>
+                                                    <p class='sec-dlp'>{{this.authors}}</p>
+                                                    <p class='sec-dlcont'>{{this.summary}}</p>
+                                                    {{#each this.tags}}
+                                                    <span>{{this}}</span> {{/each}}
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </script>
+
+                                <div class="up ">上拉加载</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 整平滑动第二页 -->
+                    <div class="swiper-slide ">
+                        <div class="slide2 ">
+                            <!-- 头部input -->
+                            <div class="slide2-top ">
+                                <p class='slide2-topp'>
+                                    <input type="text " placeholder="请输入书名，作者，关键字 " id="searchText">
+                                    <i class="icon iconfont icon-yintian-baitian "></i>
+                                </p>
+                                <p class='slide2-topp1'><i class="icon iconfont icon-fenlei "></i>
+                                </p>
+                            </div>
+
+                            <!-- 内容 -->
+                            <script id="books-all" type="text/x-handlebars-template">
+                                {{#each this}}
+                                <dl class='articleClassGo' id='{{this.fiction_id}}'>
+                                    <dt><img src="{{this.cover}}"></dt>
+                                    <dd>
+                                        <p class='sec-dlfirstp'>{{this.title}}</p>
+                                        <p class='sec-dlp'>{{this.authors}}</p>
+                                        <p class='sec-dlcont'>{{this.summary}}</p>
+                                        {{#each this.tags}}
+                                        <span>{{this}}</span> {{/each}}
+                                    </dd>
+                                </dl>
+                                {{/each}}
+
+                            </script>
+                            <div class="slide2-cont books-all">
+
+                            </div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/utils/require.js "></script>
+    <script src="/js/index/index.js "></script>
+
+</body>
+
+</html>

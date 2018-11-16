@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/fonts/iconfont.css">
+    <link rel="stylesheet" href="/css/cont.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <script id="read-container" type="text/x-handlebars-template">
+        <header>
+            <h1>{{this.t}}</h1>
+        </header>
+        <p class='he-cont'>
+            {{this.p}}
+        </p>
+    </script>
+    <div class="wrap read-container">
+
+    </div>
+    <div class="mask">
+        <header>
+            <p>&lt;<span id='back'>返回</span></p>
+        </header>
+        <footer>
+            <div class="fot-top">
+                <span class='fot-prev'>上一章</span>
+                <span><u class='fot-start'>1</u>/<i class='fot-end'>66</i></span>
+                <span class='fot-next'>下一章</span>
+            </div>
+            <ul>
+                <li>
+                    <i class="icon iconfont icon-mulu"></i>
+                    <span class='li-font Catalog'>目录</span>
+                </li>
+                <li>
+                    <i class="icon iconfont icon-font"></i>
+                    <span class='li-font fonts'>字体</span>
+                    <div class="font">
+                        <p>
+                            字号
+                            <span id='big'>大</span>
+                            <span id='small'>小</span>
+                        </p>
+                        <div class="font-color">
+                            背景
+                            <ol id='color'>
+                                <li class="palevioletred"></li>
+                                <li class="limegreen"></li>
+                                <li class="lawngreen"></li>
+                                <li class="black"></li>
+                                <li class="blanchedalmond"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="icon iconfont icon-yewan2"></i>
+                    <i class="icon iconfont icon-baitian-qing"></i>
+                    <span class='li-font night'>夜间</span>
+                </li>
+                <li>
+                    <i class="icon iconfont icon-xiazai2"></i>
+                    <!-- <i class="fa fa-download li-font download" aria-hidden="true" title="下载" onclick="window.open('file/user.txt')">下载</i> -->
+                    <span class='li-font download'>下载</span>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="/static/js/utils/require.js "></script>
+    <script src="/js/articleRead/index.js "></script>
+</body>
+
+</html>
